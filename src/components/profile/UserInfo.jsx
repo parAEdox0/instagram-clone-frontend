@@ -5,12 +5,12 @@ const UserInfo = ({ user, posts }) => {
     <div className="py-3 flex items-start">
       <div className="flex flex-col w-[45vw] gap-1 ml-2">
         <img
-          src={`${user.profile}`}
+          src={`/images/${user.profile}`}
           className="w-[11vh] h-[11vh] rounded-[50%] object-cover object-top ml-3"
           alt="User Profile"
         />
         <p className="text-[10px] ml-2 mt-1 text-zinc-300 font-light">
-          {user.fullname}
+          {user.fullName}
         </p>
         <p className="text-[9px] ml-2 mt-1 min-w-[50px] max-w-[80px] text-white font-normal bg-zinc-700 px-1 py-1 rounded-2xl">
           @ {user.username}

@@ -14,7 +14,7 @@ const Footer = ({ user }) => {
       </a>
       <a href="/profile">
         <img
-          src={`${user.profile}`}
+          src={`/images/${user.profile}`}
           className="h-8 w-8 rounded-full object-cover object-top"
           alt="User Profile"
         />

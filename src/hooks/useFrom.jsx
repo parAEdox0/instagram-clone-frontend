@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useForm = (initialArray) => {
-  let [values, setValues] = useState(initialArray);
+const useForm = (initialObject) => {
+  let [values, setValues] = useState(initialObject);
 
   const handleChange = (e) => {
     setValues({
@@ -11,7 +11,7 @@ const useForm = (initialArray) => {
   };
 
   const resetForm = () => {
-    setValues(initialArray);
+    setValues(initialObject);
   };
 
   return { values, handleChange, resetForm };

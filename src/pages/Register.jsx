@@ -1,6 +1,8 @@
 // importing dependencies
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
 
 // importing hooks
 import { Link, useNavigate } from "react-router-dom";
@@ -11,6 +13,9 @@ import useForm from "../hooks/useFrom";
 import loadingGif from "/src/assets/gif/loading-gif.gif";
 
 const Register = () => {
+  // importing setIsLoggedIn
+  const { setIsLoggedIn } = useContext(AuthContext);
+
   // defining variables
   let { values, handleChange, resetForm } = useForm({
     fullName: "",
@@ -45,12 +50,12 @@ const Register = () => {
       // resetting the forrm
       resetForm();
 
-      // logging the output
-      console.log(createdUser.data);
-
       // storing the token and id as cookies in browser
       Cookies.set("_id", createdUser.data._id);
       Cookies.set("token", createdUser.data.token);
+
+      // changing login state
+      setIsLoggedIn(true);
 
       // navigating to the profile page
       navigate("/profile");
